@@ -8,7 +8,7 @@ def commun(sock,target):
     http_req += f"GET / HTTP/1.1{newline}"
     http_req += f"Host: {target}{newline}"
     http_req += f"Connection: keep-alive{newline}"
-    http_req += f'sec-ch-ua: "Not?A_Brand";v="99", "Chromium";v="130"{newline}'
+    http_req += f'sec-ch-ua: "Chromium";v="129", "Not=A?Brand";v="8"{newline}'
     http_req += f"sec-ch-ua-mobile: ?0{newline}"
     http_req += f'sec-ch-ua-platform: "macOS"{newline}'
     http_req += f"DNT: 1{newline}"
@@ -36,7 +36,6 @@ def commun(sock,target):
 if __name__ == "__main__":
     mysock.enable_ctrl_c()
     target = input("どこに接続しますか:")
-    print(target)
     sock = mysock.prepare_socket_c(target)
     if sock is None:
         sys.exit(1)
